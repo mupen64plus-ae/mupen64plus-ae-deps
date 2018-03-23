@@ -12,7 +12,7 @@ LOCAL_SHARED_LIBRARIES := png
 LOCAL_C_INCLUDES +=   \
     $(LOCAL_PATH)/$(SRCDIR)/builds  \
     $(LOCAL_PATH)/$(SRCDIR)/include \
-    $(PNG_INCLUDES)                 \
+    $(LOCAL_PATH)/png                 \
 	
 LOCAL_SRC_FILES:= \
 	$(SRCDIR)/src/base/ftbbox.c \

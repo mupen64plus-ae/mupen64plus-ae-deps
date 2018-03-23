@@ -12,9 +12,8 @@ COMMON_CPPFLAGS :=                  \
     -O3                             \
     -ffast-math                     \
 
-
 include $(JNI_LOCAL_PATH)/SDL2/Android.mk
 include $(JNI_LOCAL_PATH)/soundtouch/source/Android-lib/jni/Android.mk
-include $(JNI_LOCAL_PATH)/png/Android.mk
+include $(JNI_LOCAL_PATH)/png.mk
 include $(JNI_LOCAL_PATH)/freetype.mk
 include $(JNI_LOCAL_PATH)/GL/GL/Android.mk
