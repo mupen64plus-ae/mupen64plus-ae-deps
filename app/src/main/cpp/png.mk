@@ -34,7 +34,16 @@ LOCAL_SRC_FILES +=\
 	png/arm/arm_init.c \
 	png/arm/filter_neon.S \
 	png/arm/filter_neon_intrinsics.c
+else ifeq ($(TARGET_ARCH_ABI), arm64-v8a)
+LOCAL_SRC_FILES +=\
+	png/arm/arm_init.c \
+	png/arm/filter_neon.S \
+	png/arm/filter_neon_intrinsics.c
 else ifeq ($(TARGET_ARCH_ABI), x86)
+LOCAL_SRC_FILES +=\
+	png/intel/intel_init.c \
+	png/intel/filter_sse2_intrinsics.c
+else ifeq ($(TARGET_ARCH_ABI), x86_64)
 LOCAL_SRC_FILES +=\
 	png/intel/intel_init.c \
 	png/intel/filter_sse2_intrinsics.c

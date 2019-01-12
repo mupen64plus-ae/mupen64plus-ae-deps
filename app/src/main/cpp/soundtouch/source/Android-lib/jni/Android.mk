@@ -27,6 +27,10 @@ ifeq ($(TARGET_ARCH_ABI), x86)
 MY_LOCAL_SRC_FILES += ../../SoundTouch/mmx_optimized.cpp
 endif
 
+ifeq ($(TARGET_ARCH_ABI), x86_64)
+MY_LOCAL_SRC_FILES += ../../SoundTouch/mmx_optimized.cpp
+endif
+
 MY_LOCAL_LDLIBS    := -llog
 MY_LOCAL_C_INCLUDES := $(LOCAL_PATH)/../../../include
 MY_LOCAL_CFLAGS := -fdata-sections -ffunction-sections -fexceptions
@@ -43,14 +47,17 @@ include $(BUILD_SHARED_LIBRARY)
 
 MY_LOCAL_SRC_FILES +=  ../../SoundTouch/sse_optimized.cpp
 MY_LOCAL_CFLAGS += -DSOUNDTOUCH_ALLOW_SSE
-include $(CLEAR_VARS)
 
+include $(CLEAR_VARS)
 LOCAL_MODULE    := soundtouch_fp
 LOCAL_SRC_FILES := $(MY_LOCAL_SRC_FILES)
 LOCAL_LDLIBS    := $(MY_LOCAL_LDLIBS)
 LOCAL_C_INCLUDES := $(MY_LOCAL_C_INCLUDES)
 LOCAL_CFLAGS := $(MY_LOCAL_CFLAGS) -DSOUNDTOUCH_FLOAT_SAMPLES
 ifeq ($(TARGET_ARCH_ABI), armeabi-v7a)
+LOCAL_CFLAGS += -DSSE_NEON -mfpu=neon
+endif
+ifeq ($(TARGET_ARCH_ABI), arm64-v8a)
 LOCAL_CFLAGS += -DSSE_NEON -mfpu=neon
 endif
 LOCAL_ARM_MODE := $(MY_LOCAL_ARM_MODE)
