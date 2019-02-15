@@ -18,6 +18,7 @@ tmp/
 *.tmp
 gdb.setup
 gdbserver
+*.iml
 
 # Eclipse project files
 .settings/
