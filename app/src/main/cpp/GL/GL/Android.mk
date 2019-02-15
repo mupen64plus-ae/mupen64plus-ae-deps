@@ -38,6 +38,7 @@ LOCAL_CFLAGS := -DEGL
 LOCAL_LDLIBS := -lEGL
 
 LOCAL_CPPFLAGS := $(COMMON_CPPFLAGS) -Wno-unused-value -std=c++11
+LOCAL_LDFLAGS := -fuse-ld=lld
 
 LOCAL_SHARED_LIBRARIES := EGLLoader
 

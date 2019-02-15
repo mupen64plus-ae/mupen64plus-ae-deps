@@ -54,6 +54,7 @@ LOCAL_SHARED_LIBRARIES := hidapi
 
 LOCAL_CFLAGS += -DGL_GLEXT_PROTOTYPES
 LOCAL_LDLIBS := -ldl -lGLESv1_CM -lGLESv2 -llog -landroid
+LOCAL_LDFLAGS := -fuse-ld=lld
 
 ifeq ($(NDK_DEBUG),1)
     cmd-strip :=
@@ -73,6 +74,7 @@ LOCAL_MODULE_FILENAME := libSDL2
 
 LOCAL_LDLIBS := 
 LOCAL_EXPORT_LDLIBS := -ldl -lGLESv1_CM -lGLESv2 -llog -landroid
+LOCAL_LDFLAGS := -fuse-ld=lld
 
 include $(BUILD_STATIC_LIBRARY)
 
@@ -106,5 +108,6 @@ LOCAL_SRC_FILES := src/hidapi/android/hid.cpp
 
 LOCAL_MODULE := libhidapi
 LOCAL_LDLIBS := -llog
+LOCAL_LDFLAGS := -fuse-ld=lld
 
 include $(BUILD_SHARED_LIBRARY)
