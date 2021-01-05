@@ -22,6 +22,7 @@ android {
             path "src/main/cpp/Android.mk"
         }
     }
+    ndkVersion '22.0.7026061'
 
     defaultConfig {
         externalNativeBuild {
