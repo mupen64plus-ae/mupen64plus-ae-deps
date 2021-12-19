@@ -1,13 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 28
-    buildToolsVersion = '28.0.3'
+    compileSdkVersion 31
+    buildToolsVersion = '31.0.0'
 
     defaultConfig {
         applicationId "deps.mupen64plusae.android.paulscode.mupen64plus_ae_deps"
-        minSdkVersion 21
-        targetSdkVersion 30
+        minSdkVersion 23
+        targetSdkVersion 31
         versionCode 1
         versionName "1.0"
     }
@@ -22,7 +22,7 @@ android {
             path "src/main/cpp/Android.mk"
         }
     }
-    ndkVersion '22.0.7026061'
+    ndkVersion "23.1.7779620"
 
     defaultConfig {
         externalNativeBuild {
@@ -38,5 +38,4 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation 'com.android.support:appcompat-v7:28.0.0'
 }
