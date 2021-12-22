@@ -19,3 +19,4 @@ include $(JNI_LOCAL_PATH)/png.mk
 include $(JNI_LOCAL_PATH)/freetype.mk
 include $(JNI_LOCAL_PATH)/GL/GL/Android.mk
 include $(JNI_LOCAL_PATH)/miniupnp-build/Android.mk
+include $(JNI_LOCAL_PATH)/natpmp.mk
